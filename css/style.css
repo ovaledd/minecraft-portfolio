@@ -81,11 +81,21 @@ body {
   text-decoration: none;
   font-weight: 600;
   padding: 6px 10px;
-  transition: color 0.2s;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 .nav-links a:hover {
   color: var(--accent);
+}
+
+.nav-links a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.navbar.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* ===== Hero ===== */
@@ -93,10 +103,21 @@ body {
   background:
     radial-gradient(ellipse at 70% 20%, rgba(59, 130, 246, 0.18), transparent 50%),
     linear-gradient(180deg, var(--night) 0%, var(--night-2) 100%);
-  padding: 120px 0 140px;
+  padding: 130px 0 150px;
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
 }
 
 .hero::after {
@@ -109,6 +130,36 @@ body {
   background:
     repeating-linear-gradient(90deg, var(--navy) 0 32px, var(--navy-dark) 32px 64px);
   border-top: 4px solid var(--navy-dark);
+}
+
+.hero .hero-inner {
+  position: relative;
+  z-index: 1;
+  animation: heroIn 0.8s ease both;
+}
+
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.floating-block {
+  position: absolute;
+  font-size: 22px;
+  opacity: 0.28;
+  animation: floatBlock 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-block:nth-of-type(1) { top: 18%; left: 8%; animation-delay: 0s; }
+.floating-block:nth-of-type(2) { top: 62%; left: 14%; animation-delay: 1.5s; }
+.floating-block:nth-of-type(3) { top: 30%; right: 10%; animation-delay: 3s; }
+.floating-block:nth-of-type(4) { top: 70%; right: 16%; animation-delay: 4.5s; }
+
+@keyframes floatBlock {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(8deg); }
 }
 
 .hero-tag {
@@ -379,7 +430,7 @@ body {
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(6, 10, 20, 0.94);
   display: none;
   align-items: center;
   justify-content: center;
@@ -390,18 +441,32 @@ body {
 
 .lightbox.open {
   display: flex;
+  animation: lightboxIn 0.2s ease;
+}
+
+@keyframes lightboxIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .lightbox img {
   max-width: min(1000px, 90vw);
   max-height: 75vh;
   border: 4px solid var(--stone);
+  animation: heroIn 0.25s ease both;
 }
 
 .lightbox-caption {
   margin-top: 16px;
   color: var(--text-dim);
   text-align: center;
+}
+
+.lightbox-count {
+  margin-top: 8px;
+  font-family: var(--pixel-font);
+  font-size: 10px;
+  color: var(--accent);
 }
 
 .lightbox-close {
@@ -418,6 +483,116 @@ body {
 
 .lightbox-close:hover {
   color: var(--accent);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(29, 58, 99, 0.7);
+  border: 3px solid var(--stone);
+  color: var(--text);
+  font-size: 26px;
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.lightbox-nav:hover {
+  background: var(--primary);
+  border-color: var(--accent);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+/* ===== Back to top ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 150;
+  width: 48px;
+  height: 48px;
+  background: var(--primary);
+  color: #fff;
+  border: 3px solid var(--primary-dark);
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  filter: brightness(1.15);
+}
+
+/* ===== Scroll reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Scrollbar & selection ===== */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--night);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--navy);
+  border: 2px solid var(--night);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+::selection {
+  background: var(--primary);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ===== Gallery hover zoom ===== */
+.build img {
+  transition: transform 0.35s ease;
+}
+
+.build:hover img {
+  transform: scale(1.06);
+}
+
+.build figcaption {
+  transition: color 0.2s;
 }
 
 /* ===== Responsive ===== */
@@ -437,5 +612,19 @@ body {
 
   .section {
     padding: 60px 0;
+  }
+
+  .lightbox-nav {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+
+  .lightbox-prev {
+    left: 8px;
+  }
+
+  .lightbox-next {
+    right: 8px;
   }
 }
