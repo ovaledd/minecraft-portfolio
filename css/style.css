@@ -1,17 +1,17 @@
 /* ===== Minecraft Portfolio Styles ===== */
 
 :root {
-  --grass: #5cb85c;
-  --grass-dark: #3e8e41;
-  --dirt: #7a4a2b;
-  --dirt-dark: #5d3520;
-  --stone: #8f8f8f;
-  --stone-dark: #6f6f6f;
-  --night: #1a1a2e;
-  --night-2: #16213e;
-  --text: #e8e8e8;
-  --text-dim: #b5b5b5;
-  --accent: #f0c040;
+  --primary: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --navy: #1d3a63;
+  --navy-dark: #12294a;
+  --stone: #93a3b8;
+  --stone-dark: #6d7d94;
+  --night: #0d1526;
+  --night-2: #142036;
+  --text: #e8ecf4;
+  --text-dim: #a9b6c9;
+  --accent: #8ab4ff;
   --pixel-font: 'Press Start 2P', monospace;
   --body-font: 'Inter', sans-serif;
 }
@@ -52,8 +52,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--dirt);
-  border-bottom: 4px solid var(--dirt-dark);
+  background: var(--navy);
+  border-bottom: 4px solid var(--navy-dark);
 }
 
 .nav-inner {
@@ -68,7 +68,7 @@ body {
   font-size: 14px;
   color: var(--text);
   text-decoration: none;
-  text-shadow: 2px 2px 0 var(--dirt-dark);
+  text-shadow: 2px 2px 0 var(--navy-dark);
 }
 
 .nav-links {
@@ -91,7 +91,7 @@ body {
 /* ===== Hero ===== */
 .hero {
   background:
-    radial-gradient(ellipse at 70% 20%, rgba(240, 192, 64, 0.15), transparent 50%),
+    radial-gradient(ellipse at 70% 20%, rgba(59, 130, 246, 0.18), transparent 50%),
     linear-gradient(180deg, var(--night) 0%, var(--night-2) 100%);
   padding: 120px 0 140px;
   text-align: center;
@@ -107,8 +107,8 @@ body {
   right: 0;
   height: 24px;
   background:
-    repeating-linear-gradient(90deg, var(--dirt) 0 32px, var(--dirt-dark) 32px 64px);
-  border-top: 4px solid var(--dirt-dark);
+    repeating-linear-gradient(90deg, var(--navy) 0 32px, var(--navy-dark) 32px 64px);
+  border-top: 4px solid var(--navy-dark);
 }
 
 .hero-tag {
@@ -154,9 +154,9 @@ body {
 }
 
 .btn-primary {
-  background: var(--grass);
+  background: var(--primary);
   color: #fff;
-  box-shadow: 0 4px 0 var(--grass-dark);
+  box-shadow: 0 4px 0 var(--primary-dark);
 }
 
 .btn-primary:hover {
@@ -166,7 +166,7 @@ body {
 
 .btn-primary:active {
   transform: translateY(2px);
-  box-shadow: 0 1px 0 var(--grass-dark);
+  box-shadow: 0 1px 0 var(--primary-dark);
 }
 
 .btn-outline {
@@ -232,7 +232,7 @@ body {
 
 .filter-btn.active {
   background: var(--accent);
-  box-shadow: 0 3px 0 #c99e2a;
+  box-shadow: 0 3px 0 #1d4ed8;
 }
 
 /* ===== Gallery ===== */
@@ -269,8 +269,8 @@ body {
   padding: 12px 14px;
   font-size: 14px;
   color: var(--text);
-  background: var(--dirt);
-  border-top: 3px solid var(--dirt-dark);
+  background: var(--navy);
+  border-top: 3px solid var(--navy-dark);
 }
 
 @keyframes fadeIn {
@@ -329,7 +329,7 @@ body {
 
 .experience-item {
   background: var(--night);
-  border-left: 5px solid var(--grass);
+  border-left: 5px solid var(--primary);
   padding: 16px 20px;
   display: flex;
   flex-direction: column;
@@ -370,7 +370,7 @@ body {
 
 .service-card:hover {
   transform: translateY(-4px);
-  border-color: var(--grass);
+  border-color: var(--primary);
 }
 
 .service-card h3 {
@@ -398,8 +398,8 @@ body {
 
 /* ===== Footer ===== */
 .footer {
-  background: var(--dirt);
-  border-top: 4px solid var(--dirt-dark);
+  background: var(--navy);
+  border-top: 4px solid var(--navy-dark);
   padding: 20px 0;
   text-align: center;
   font-size: 14px;
