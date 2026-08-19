@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Minecraft Builds | Portfolio</title>
+  <meta name="description" content="Portfolio of Minecraft builds - houses, castles, landscapes and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">&#9632; MyBuilds</a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="container hero-inner">
+      <p class="hero-tag">Minecraft Builder</p>
+      <h1>I Build Worlds,<br>One Block at a Time</h1>
+      <p class="hero-sub">Hi, I'm [Your Name]. I create detailed Minecraft builds â€” from cozy survival homes to massive fantasy castles.</p>
+      <div class="hero-actions">
+        <a href="#gallery" class="btn btn-primary">View My Builds</a>
+        <a href="#contact" class="btn btn-outline">Hire Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2 class="section-title">My Builds</h2>
+      <p class="section-sub">Click a filter to browse. Click any build to see it full size.</p>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="house">Houses</button>
+        <button class="filter-btn" data-filter="castle">Castles</button>
+        <button class="filter-btn" data-filter="landscape">Landscapes</button>
+        <button class="filter-btn" data-filter="redstone">Redstone</button>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <!--
+          HOW TO ADD A BUILD:
+          1. Drop your image into the "images/builds" folder
+          2. Copy one of the blocks below, paste it at the end of this list
+          3. Change the src, alt, and category ("house", "castle", "landscape", or "redstone")
+
+          Example:
+          <figure class="build" data-category="house">
+            <img src="images/builds/my-house.png" alt="My house">
+            <figcaption>My House - Description of the build</figcaption>
+          </figure>
+        -->
+        <figure class="build" data-category="house">
+          <img src="images/builds/placeholder.svg" alt="Placeholder - replace with your house build">
+          <figcaption>Example House - Replace this image with your own build</figcaption>
+        </figure>
+
+        <figure class="build" data-category="castle">
+          <img src="images/builds/placeholder.svg" alt="Placeholder - replace with your castle build">
+          <figcaption>Example Castle - Replace this image with your own build</figcaption>
+        </figure>
+
+        <figure class="build" data-category="landscape">
+          <img src="images/builds/placeholder.svg" alt="Placeholder - replace with your landscape build">
+          <figcaption>Example Landscape - Replace this image with your own build</figcaption>
+        </figure>
+
+        <figure class="build" data-category="redstone">
+          <img src="images/builds/placeholder.svg" alt="Placeholder - replace with your redstone build">
+          <figcaption>Example Redstone - Replace this image with your own build</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / EXPERIENCE ===== -->
+  <section id="about" class="section section-alt">
+    <div class="container about-grid">
+      <div class="about-text">
+        <h2 class="section-title">About Me</h2>
+        <p>Replace this with a short paragraph about yourself â€” how long you've been building, what you love about Minecraft, your favorite style, and any servers or teams you've built for.</p>
+        <ul class="stats">
+          <li><strong>0+</strong> Years Building</li>
+          <li><strong>0</strong> Projects Completed</li>
+          <li><strong>0</strong> Happy Clients</li>
+        </ul>
+      </div>
+      <div class="about-experience">
+        <h3>Experience</h3>
+        <ul class="experience-list">
+          <!-- Copy this block to add more experience entries -->
+          <li class="experience-item">
+            <span class="exp-year">2024 - Present</span>
+            <span class="exp-title">Freelance Builder</span>
+            <span class="exp-desc">Describe what you did - servers, commissions, team projects.</span>
+          </li>
+          <li class="experience-item">
+            <span class="exp-year">2023 - 2024</span>
+            <span class="exp-title">Server Build Team</span>
+            <span class="exp-desc">Describe your role and what you built for the server.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title">What I Offer</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Custom Houses & Bases</h3>
+          <p>Survival-friendly homes, bases, and interiors built to your style.</p>
+        </div>
+        <div class="service-card">
+          <h3>Castles & Fantasy Builds</h3>
+          <p>Large-scale castles, towers, and themed fantasy structures.</p>
+        </div>
+        <div class="service-card">
+          <h3>Landscapes & Terraforming</h3>
+          <p>Mountains, rivers, forests, and custom terrain shaping.</p>
+        </div>
+        <div class="service-card">
+          <h3>Redstone Contraptions</h3>
+          <p>Farms, machines, and automated builds that actually work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section section-alt">
+    <div class="container contact-inner">
+      <h2 class="section-title">Want a Build?</h2>
+      <p class="section-sub">Replace these links with your Discord, email, or server details.</p>
+      <div class="contact-links">
+        <a href="https://discord.com" class="btn btn-primary" target="_blank" rel="noopener">Discord: YourName#0000</a>
+        <a href="mailto:you@example.com" class="btn btn-outline">you@example.com</a>
+        <a href="https://planetminecraft.com" class="btn btn-outline" target="_blank" rel="noopener">Planet Minecraft</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&#9632; MyBuilds &copy; <span id="year"></span> - Built with love, one block at a time.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
