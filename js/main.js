@@ -1,28 +1,11 @@
-// ===== Portfolio scripts: filters, lightbox =====
+// ===== Portfolio scripts: lightbox =====
 
 // Year in footer
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ===== Gallery filters =====
-const filterButtons = document.querySelectorAll(".filter-btn");
-const builds = document.querySelectorAll(".build");
-
-filterButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    filterButtons.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    const filter = btn.dataset.filter;
-
-    builds.forEach((build) => {
-      const show = filter === "all" || build.dataset.category === filter;
-      build.style.display = show ? "" : "none";
-    });
-  });
-});
-
 // ===== Lightbox =====
 const lightbox = document.getElementById("lightbox");
+const builds = document.querySelectorAll(".build");
 const lightboxImg = document.getElementById("lightboxImg");
 const lightboxCaption = document.getElementById("lightboxCaption");
 const lightboxClose = document.getElementById("lightboxClose");
